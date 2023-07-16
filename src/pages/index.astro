@@ -4,6 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,11 +23,32 @@
     <meta name="generator" content={Astro.generator} />
     <title>Pid Litacka</title>
   </head>
+
+  <style>
+    .animated > * {
+      display: inline-block;
+      position: relative;
+      animation: 4.5s linear infinite alternate move;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateX(0%);
+        left: 0%;
+      }
+      100%,
+      100% {
+        transform: translateX(-100%);
+        left: 100%;
+      }
+    }
+  </style>
+
   <body class="bg-[#f3f5f7]" style="font-family: 'Roboto', sans-serif;">
     <section id="TODO" class="mx-4">
       <!---- STICKY HEADER ---->
 
-      <div class="sticky top-0 w-[100%] bg-[#f3f5f7] pt-4">
+      <div class="sticky z-10 top-0 w-[100%] bg-[#f3f5f7] pt-4">
         <div id="SETTINGS" class="text-right">
           <i class="fa-solid fa-gear fa-lg" style="color:#2a1253;"></i>
         </div>
@@ -50,8 +72,9 @@
 
       <!---- RELOJ ---->
 
-      <section id="RELOJ" class="text-[20px] font-medium text-center mb-2">
-      </section>
+      <div class="text-[20px] font-medium mb-2">
+        <div class="animated"><span id="RELOJ">Short</span></div>
+      </div>
 
       <!---- CODIGO QR ---->
 
